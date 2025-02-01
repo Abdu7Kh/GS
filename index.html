@@ -14,7 +14,9 @@
             <img src="images/logo.png" alt="Great Smile Lab Logo">
         </div>
         <nav>
-            <ul>
+            <!-- Hamburger Menu Icon -->
+            <div class="mobile-menu-icon" id="menu-icon">&#9776;</div>
+            <ul id="menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -91,17 +93,17 @@
         <p>Feel free to reach out to us for any inquiries or collaborations.</p>
         <form action="#" method="POST" enctype="multipart/form-data">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            
-            <label for="file">Attach File:</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+
+            <label for="file">Attach File (Optional):</label>
             <input type="file" id="file" name="file">
-            
+
             <button type="submit">Send Message</button>
         </form>
     </section>
