@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Great Smile Lab</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png"> <!-- Favicon -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Great Smile Lab Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <select id="language-switcher">
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                        <option value="sv">Svenska</option>
+                        <option value="da">Dansk</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero contact-hero">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <p>We're here to help you with any inquiries or collaborations.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Get in Touch</h2>
+        <p>Feel free to reach out to us for any inquiries or collaborations. We'd love to hear from you!</p>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+
+            <label for="file">Attach File (Optional):</label>
+            <input type="file" id="file" name="file">
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/46737012177" target="_blank" class="whatsapp-button">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp">
+        <span>Contact Us on WhatsApp</span>
+    </a>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Great Smile Lab. All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

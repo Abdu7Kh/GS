@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Smile Lab</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png"> <!-- Favicon -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Great Smile Lab Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <select id="language-switcher">
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                        <option value="sv">Svenska</option>
+                        <option value="da">Dansk</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Crafting Perfect Smiles</h1>
+            <p>Precision Dental Laboratory Services</p>
+            <a href="#services" class="cta-button">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At Great Smile Lab, we are dedicated to providing top-notch dental laboratory services. Our team of experts uses the latest technology and materials to craft perfect smiles for our clients.</p>
+        <p>With years of experience in the industry, we pride ourselves on delivering precision, quality, and customer satisfaction in every project we undertake.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p class="price-note">Our services start at just $80. Explore the options below to find the perfect solution for your needs.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="images/implantat.jpg" alt="Implantat">
+                <h3>Implantat</h3>
+                <p>High-quality dental implants designed for durability and aesthetics.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/mk.jpg" alt="MK">
+                <h3>MK</h3>
+                <p>Advanced dental solutions tailored to meet your specific needs.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/partial_protes.jpg" alt="Partial Protes">
+                <h3>Partial Protes</h3>
+                <p>Custom partial dentures crafted for comfort and functionality.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/zirkon.jpg" alt="Zirkon">
+                <h3>Zirkon</h3>
+                <p>Durable zirconia crowns that blend seamlessly with natural teeth.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/Bettskena-blekningskena.jpg" alt="Bettskena Blekningskena">
+                <h3>Bettskena Blekningskena</h3>
+                <p>Professional teeth whitening trays for a brighter smile.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/emax-venner.jpg" alt="Emax Venners">
+                <h3>Emax Venners</h3>
+                <p>Premium ceramic veneers for a flawless smile transformation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out to us for any inquiries or collaborations.</p>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <label for="file">Attach File:</label>
+            <input type="file" id="file" name="file">
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/46737012177" target="_blank" class="whatsapp-button">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp">
+        <span>Contact Us on WhatsApp</span>
+    </a>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Great Smile Lab. All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
