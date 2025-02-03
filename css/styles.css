@@ -139,6 +139,7 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
+    position: relative; /* Ensure the hero section contains the particles */
     height: 70vh;
     display: flex;
     align-items: center;
@@ -146,27 +147,18 @@ nav a:hover {
     text-align: center;
     color: var(--text-light);
     padding: 2rem;
-    background-attachment: fixed; /* Parallax Scrolling Effect */
-}
-
-.hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url('../images/hero-image.jpg') center/cover;
 }
 
-.services-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('../images/services-background.jpg') center/cover;
-}
-
-.about-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('../images/about-background.jpg') center/cover;
-}
-
-.contact-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('../images/contact-background.jpg') center/cover;
+/* Particle.js Styles */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind other content */
 }
 
 .hero-content h1 {
@@ -227,6 +219,14 @@ nav a:hover {
     margin-bottom: 2rem;
 }
 
+/* Gradient Text Effects */
+.gradient-text {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
 /* Services Section */
 .services {
     padding: 4rem 2rem;
@@ -255,6 +255,7 @@ nav a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     padding: 1rem;
+    position: relative; /* Required for tooltips */
 }
 
 .service-card:hover {
@@ -268,11 +269,12 @@ nav a:hover {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 1rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.service-card img:hover {
+.service-card img.hover-effect:hover {
     transform: scale(1.1);
+    filter: brightness(0.8);
 }
 
 .service-card h3 {
@@ -287,6 +289,35 @@ nav a:hover {
     font-size: 1rem;
     line-height: 1.6;
     color: var(--text-dark);
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* Contact Section */
@@ -309,16 +340,15 @@ nav a:hover {
     gap: 1rem;
 }
 
-.contact-section label {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    text-align: left;
-    display: block;
-    margin-bottom: 0.5rem;
+/* Floating Labels */
+.form-group {
+    position: relative;
+    margin-bottom: 1rem;
 }
 
-.contact-section input,
-.contact-section textarea {
+.form-group input,
+.form-group textarea {
+    width: 100%;
     padding: 1rem;
     border: 1px solid var(--primary-color);
     border-radius: 5px;
@@ -327,10 +357,24 @@ nav a:hover {
     transition: border-color 0.3s ease;
 }
 
-.contact-section input:focus,
-.contact-section textarea:focus {
-    border-color: var(--accent-color);
-    outline: none;
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: var(--text-dark);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.8rem;
+    color: var(--accent-color);
 }
 
 .contact-section button {
@@ -383,6 +427,93 @@ nav a:hover {
 .whatsapp-button:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress Bar */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: var(--accent-color);
+    z-index: 9999;
+    transition: width 0.3s ease;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Popup */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--text-light);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.modal-content p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--accent-color);
 }
 
 /* Footer */
