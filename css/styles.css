@@ -8,6 +8,14 @@
     --background: #F5F5DC; /* Beige Background */
 }
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --primary-color: #333333;
+    --background: #121212; /* Dark Background */
+    --text-dark: #FFFFFF; /* Light Text for Dark Mode */
+    --text-light: #121212; /* Dark Text for Dark Mode */
+}
+
 /* Global Reset */
 * {
     margin: 0;
@@ -20,22 +28,18 @@
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'Tajawal';
     src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'Amiri';
     src: url('../fonts/Amiri-Regular.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'Cairo';
     src: url('../fonts/Cairo-Regular.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'Lato';
     src: url('../fonts/Lato-Regular.ttf') format('truetype');
@@ -48,6 +52,7 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     scroll-behavior: smooth; /* Smooth scrolling */
+    transition: all 0.3s ease; /* Smooth transition for Dark Mode */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -103,6 +108,35 @@ nav a:hover {
     transform: scale(1.1);
 }
 
+/* Mobile Menu Icon and Dark Mode Toggle */
+.mobile-menu-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between the menu icon and dark mode toggle */
+}
+
+#menu-icon {
+    font-size: 2rem;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.dark-mode-toggle {
+    background-color: var(--text-light); /* White background */
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--primary-color); /* Dark text color for contrast */
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for visibility */
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.2);
+}
+
 /* Hero Section */
 .hero {
     height: 70vh;
@@ -112,6 +146,7 @@ nav a:hover {
     text-align: center;
     color: var(--text-light);
     padding: 2rem;
+    background-attachment: fixed; /* Parallax Scrolling Effect */
 }
 
 .hero {
@@ -154,6 +189,14 @@ nav a:hover {
 .cta-button:hover {
     background: var(--accent-color);
     transform: translateY(-3px);
+}
+
+/* Responsive Design for Hero Section */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+        margin-top: 60px; /* Add margin to avoid overlapping with the header */
+    }
 }
 
 /* Price Note Styles */
@@ -308,9 +351,9 @@ nav a:hover {
 
 /* WhatsApp Floating Button */
 .whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    position: relative; /* Changed from fixed to relative */
+    bottom: 0;
+    right: 0;
     background-color: #25D366; /* WhatsApp Green */
     color: var(--text-light);
     display: flex;
@@ -322,6 +365,8 @@ nav a:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1000;
+    margin: 2rem auto 0; /* Centered at the bottom of the page */
+    width: fit-content;
 }
 
 .whatsapp-button img {
@@ -349,31 +394,55 @@ footer {
     margin-top: 4rem;
 }
 
+/* Smooth Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Hide the regular navigation menu on smaller screens */
     nav ul {
         display: none;
         flex-direction: column;
         background-color: var(--primary-color);
         position: absolute;
-        top: 60px; /* Below the header */
+        top: 60px;
         left: 0;
         width: 100%;
         padding: 1rem;
         z-index: 1000;
     }
 
-    /* Show the hamburger menu icon */
     .mobile-menu-icon {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 1rem; /* Space between the menu icon and dark mode toggle */
+    }
+
+    #menu-icon {
         font-size: 2rem;
         color: var(--text-light);
         cursor: pointer;
-        margin-left: auto; /* Align to the right */
     }
 
-    /* Style for menu items in mobile view */
     nav ul li {
         margin: 1rem 0;
         text-align: center;
@@ -386,13 +455,12 @@ footer {
         display: block;
     }
 
-    /* Show the menu when active */
     .show-menu {
         display: flex !important;
     }
 
-    /* Adjust hero content for smaller screens */
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-top: 60px; /* Avoid overlapping with the header */
     }
 }
