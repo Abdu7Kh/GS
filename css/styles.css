@@ -1,597 +1,623 @@
+/* ==================== GLOBAL STYLES ==================== */
 /* Root Variables */
 :root {
-    --primary-color: #8B4513; /* Brown */
-    --secondary-color: #A0522D; /* Saddle Brown */
-    --accent-color: #DAA520; /* Golden Rod */
-    --text-dark: #333333; /* Dark Text */
-    --text-light: #FFFFFF; /* Light Text */
-    --background: #F5F5DC; /* Beige Background */
+  --primary-color: #8B4513; /* Brown */
+  --secondary-color: #A0522D; /* Saddle Brown */
+  --accent-color: #DAA520; /* Golden Rod */
+  --text-dark: #333333;
+  --text-light: #FFFFFF;
+  --background: #F5F5DC; /* Beige Background */
+  --transition-speed: 0.3s;
 }
 
 /* Dark Mode Variables */
 [data-theme="dark"] {
-    --primary-color: #333333;
-    --background: #121212; /* Dark Background */
-    --text-dark: #FFFFFF; /* Light Text for Dark Mode */
-    --text-light: #121212; /* Dark Text for Dark Mode */
+  --primary-color: #333333;
+  --background: #121212;
+  --text-dark: #FFFFFF;
+  --text-light: #121212;
 }
 
 /* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Define Custom Fonts */
+/* Custom Fonts */
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Tajawal';
-    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+  font-family: 'Tajawal';
+  src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Amiri';
-    src: url('../fonts/Amiri-Regular.ttf') format('truetype');
+  font-family: 'Amiri';
+  src: url('../fonts/Amiri-Regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Cairo';
-    src: url('../fonts/Cairo-Regular.ttf') format('truetype');
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-Regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Lato';
-    src: url('../fonts/Lato-Regular.ttf') format('truetype');
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Regular.ttf') format('truetype');
 }
 
-/* Global Styles */
+/* Base Styles */
 body {
-    font-family: 'Lato', sans-serif;
-    background-color: var(--background);
-    color: var(--text-dark);
-    line-height: 1.6;
-    scroll-behavior: smooth; /* Smooth scrolling */
-    transition: all 0.3s ease; /* Smooth transition for Dark Mode */
+  font-family: 'Lato', sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background-color var(--transition-speed) ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 p, li, a {
-    font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
-.arabic-text {
-    font-family: 'Tajawal', sans-serif;
-}
-
-/* Header Styles */
+/* ==================== HEADER ==================== */
 header {
-    background: var(--primary-color);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-
-nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: var(--accent-color);
+  background: var(--primary-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo img {
-    height: 60px;
-    transition: transform 0.3s ease;
+  height: 60px;
+  transition: transform var(--transition-speed) ease;
 }
 
 .logo img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-/* Mobile Menu Icon and Dark Mode Toggle */
-.mobile-menu-icon {
-    display: flex;
-    align-items: center;
-    gap: 1rem; /* Space between the menu icon and dark mode toggle */
+nav {
+  display: flex;
+  align-items: center;
 }
 
-#menu-icon {
-    font-size: 2rem;
-    color: var(--text-light);
-    cursor: pointer;
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
 }
 
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color var(--transition-speed) ease;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* نموذج البحث في الترويسة */
+nav .search-box {
+  position: relative;
+  margin-left: 1rem;
+}
+
+nav .search-box input[type="text"] {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+nav .search-box button {
+  position: absolute;
+  right: 0.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* قائمة اللغات */
+nav select {
+  padding: 0.3rem;
+  border-radius: 5px;
+  border: none;
+}
+
+/* زر الوضع الليلي - تكبير وتحسين الموقع */
 .dark-mode-toggle {
-    background-color: var(--text-light); /* White background */
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: var(--primary-color); /* Dark text color for contrast */
-    padding: 0.5rem;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for visibility */
-    transition: transform 0.3s ease;
+  background-color: var(--text-light);
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  padding: 0.7rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-speed) ease;
+  margin-left: 1rem;
 }
 
 .dark-mode-toggle:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-/* Hero Section */
-.hero {
-    position: relative; /* Ensure the hero section contains the particles */
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--text-light);
-    padding: 2rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('../images/hero-image.jpg') center/cover;
+/* ==================== MOBILE MENU ==================== */
+.mobile-menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: var(--text-light);
+  cursor: pointer;
 }
 
-/* Particle.js Styles */
-.particles-container {
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
     position: absolute;
-    top: 0;
+    top: 70px;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensure it stays behind other content */
+    padding: 1rem;
+  }
+  nav ul.show-menu {
+    display: flex;
+  }
+  .mobile-menu-icon {
+    display: block;
+  }
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+/* ==================== HERO SECTION ==================== */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+  padding: 2rem;
+  /* خلفية بسيطة بدون تدرج هنا لأن التدرج سيكون على النص */
+  background: url('../images/hero-image.jpg') center/cover;
 }
 
+.hero .hero-content {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* تدرج لوني للنص في العنوان */
+.hero .hero-content h1 {
+  font-size: 4rem; /* حجم أكبر للعنوان */
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* تكبير حجم النص الوصفي */
+.hero .hero-content p {
+  font-size: 1.75rem;
+}
+
+/* تعديل الهواتف: زيادة هامش علوي لعناصر العنوان لتظهر بالكامل */
+@media (max-width: 768px) {
+  .hero .hero-content h1 {
+    margin-top: 3rem;
+    font-size: 3rem;
+  }
+  .hero .hero-content p {
+    font-size: 1.5rem;
+  }
+}
+
+/* زر Explore Services */
 .cta-button {
-    display: inline-block;
-    background: var(--secondary-color);
-    color: var(--text-light);
-    padding: 1rem 2rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin-top: 1.5rem;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+  margin-top: 1rem;
 }
 
 .cta-button:hover {
-    background: var(--accent-color);
-    transform: translateY(-3px);
+  background: var(--accent-color);
+  transform: translateY(-3px);
 }
 
-/* Responsive Design for Hero Section */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2rem; /* Adjust font size for smaller screens */
-        margin-top: 60px; /* Add margin to avoid overlapping with the header */
-    }
+/* ==================== SECTIONS ==================== */
+section {
+  padding: 4rem 2rem;
+  margin-top: 70px; /* لتفادي تداخل الهيدر */
 }
 
-/* Price Note Styles */
-.price-note {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    margin-bottom: 2rem;
-    text-align: center;
+.about, .services, .contact-section, .blog-section, .testimonials-section {
+  text-align: center;
 }
 
-/* About Section */
-.about {
-    padding: 4rem 2rem;
-    text-align: center;
+.about h2, .services h2, .contact-section h2, .blog-section h2, .testimonials-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
+.about p, .services p, .contact-section p, .blog-section p, .testimonials-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-.about p {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.2rem;
-    color: var(--text-dark);
-    margin-bottom: 2rem;
+/* ==================== SERVICES GRID ==================== */
+.services-grid, .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Gradient Text Effects */
-.gradient-text {
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-
-/* Services Section */
-.services {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.services h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
+/* Service Card */
 .service-card {
-    background: var(--text-light);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    padding: 1rem;
-    position: relative; /* Required for tooltips */
+  background: var(--text-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  position: relative;
+  text-align: center;
+  padding: 1rem;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .service-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease, filter 0.3s ease;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: transform var(--transition-speed) ease, filter var(--transition-speed) ease;
 }
 
 .service-card img.hover-effect:hover {
-    transform: scale(1.1);
-    filter: brightness(0.8);
+  transform: scale(1.1);
+  filter: brightness(0.8);
 }
 
 .service-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
 }
 
-.service-card p {
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text-dark);
+/* ==================== TESTIMONIALS SECTION ==================== */
+.testimonials-section {
+  background-color: #f0f0f0;
+  padding: 4rem 2rem;
 }
 
-/* Tooltip Styles */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+.testimonials-slider {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%; /* Position above the element */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.testimonial {
+  display: none;
+  padding: 1rem;
+  transition: opacity var(--transition-speed) ease;
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+.testimonial.active {
+  display: block;
 }
 
-/* Contact Section */
-.contact-section {
-    padding: 4rem 2rem;
-    text-align: center;
+.testimonial p {
+  font-style: italic;
 }
 
-.contact-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
+.testimonial .author {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--secondary-color);
 }
 
+/* صور الشهادات الشخصية بتنسيق دائري */
+.testimonial img.profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* ==================== BLOG SECTION ==================== */
+.blog-grid article {
+  position: relative; /* لتطبيق التراكب */
+  background: var(--text-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease;
+}
+
+.blog-grid article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* تراكب عند التحويم على بطاقة المدونة */
+.blog-grid article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+.blog-grid article:hover::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* زر "Read More" يظهر عند التحويم */
+.blog-grid article .read-more {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.blog-grid article:hover .read-more {
+  opacity: 1;
+}
+
+.blog-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-grid article .blog-content {
+  padding: 1rem;
+  text-align: left;
+}
+
+.blog-grid article h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* ==================== CONTACT SECTION ==================== */
 .contact-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* Floating Labels */
 .form-group {
-    position: relative;
-    margin-bottom: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  transition: border-color var(--transition-speed) ease;
 }
 
 .form-group label {
-    position: absolute;
-    top: 50%;
-    left: 1rem;
-    transform: translateY(-50%);
-    color: var(--text-dark);
-    font-size: 1rem;
-    pointer-events: none;
-    transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--text-dark);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all var(--transition-speed) ease;
 }
 
 .form-group input:focus + label,
 .form-group input:not(:placeholder-shown) + label,
 .form-group textarea:focus + label,
 .form-group textarea:not(:placeholder-shown) + label {
-    top: 0;
-    font-size: 0.8rem;
-    color: var(--accent-color);
+  top: 0;
+  font-size: 0.8rem;
+  color: var(--accent-color);
 }
 
 .contact-section button {
-    background: var(--secondary-color);
-    color: var(--text-light);
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background var(--transition-speed) ease;
 }
 
 .contact-section button:hover {
-    background: var(--accent-color);
+  background: var(--accent-color);
 }
 
-/* WhatsApp Floating Button */
+/* زر واتساب يظهر تحت زر "Send Message" */
 .whatsapp-button {
-    position: relative; /* Changed from fixed to relative */
-    bottom: 0;
-    right: 0;
-    background-color: #25D366; /* WhatsApp Green */
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1000;
-    margin: 2rem auto 0; /* Centered at the bottom of the page */
-    width: fit-content;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #25D366;
+  color: var(--text-light);
+  padding: 0.8rem 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-speed) ease;
 }
 
 .whatsapp-button img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .whatsapp-button span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .whatsapp-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
 }
 
-/* Progress Bar */
+/* ==================== FOOTER ==================== */
+footer {
+  background: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+/* ==================== PROGRESS BAR & BACK TO TOP ==================== */
 #progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 5px;
-    background-color: var(--accent-color);
-    z-index: 9999;
-    transition: width 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: var(--accent-color);
+  z-index: 9999;
+  transition: width var(--transition-speed) ease;
 }
 
-/* Back to Top Button */
 #back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--accent-color);
-    color: var(--text-light);
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 1000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+  z-index: 1000;
 }
 
 #back-to-top.show {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Modal Popup */
+/* ==================== MODAL ==================== */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-    background-color: var(--text-light);
-    margin: 10% auto;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
+  background-color: var(--text-light);
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
 }
 
 .modal-content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
 .modal-content p {
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    color: var(--text-dark);
-    margin-bottom: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
 }
 
 .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
-    color: var(--text-dark);
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
 }
 
 .close:hover {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
-/* Footer */
-footer {
-    background: var(--primary-color);
-    color: var(--text-light);
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+/* ==================== MICRO-INTERACTIONS ==================== */
+a, button {
+  transition: transform var(--transition-speed) ease, background var(--transition-speed) ease;
 }
 
-/* Smooth Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: var(--primary-color);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        padding: 1rem;
-        z-index: 1000;
-    }
-
-    .mobile-menu-icon {
-        display: flex;
-        align-items: center;
-        gap: 1rem; /* Space between the menu icon and dark mode toggle */
-    }
-
-    #menu-icon {
-        font-size: 2rem;
-        color: var(--text-light);
-        cursor: pointer;
-    }
-
-    nav ul li {
-        margin: 1rem 0;
-        text-align: center;
-    }
-
-    nav ul li a {
-        font-size: 1.2rem;
-        color: var(--text-light);
-        padding: 0.5rem 1rem;
-        display: block;
-    }
-
-    .show-menu {
-        display: flex !important;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-        margin-top: 60px; /* Avoid overlapping with the header */
-    }
+a:hover, button:hover {
+  transform: scale(1.05);
 }

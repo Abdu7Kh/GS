@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog - Great Smile Lab</title>
+  <meta name="description" content="Latest news and articles from Great Smile Lab.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <!-- GSAP and ScrollTrigger CDN (للتأثيرات البصرية) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- Progress Bar -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- HEADER (نفس الترويسة مع زر الوضع الليلي) -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Great Smile Lab Logo" loading="lazy">
+    </div>
+    <nav>
+      <div class="mobile-menu-icon" id="menu-icon" aria-label="Menu" tabindex="0">&#9776;</div>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <select id="language-switcher" aria-label="Language Switcher">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="sv">Svenska</option>
+            <option value="da">Dansk</option>
+          </select>
+        </li>
+        <li class="search-box">
+          <input type="text" placeholder="Search..." aria-label="Search">
+          <button aria-label="Submit Search">&#128269;</button>
+        </li>
+        <!-- زر الوضع الليلي -->
+        <li>
+          <button class="dark-mode-toggle" aria-label="Toggle Dark Mode"><span>&#9789;</span></button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BLOG SECTION -->
+  <section class="blog-section" aria-labelledby="blog-heading">
+    <h2 id="blog-heading" class="fade-in">Our Blog</h2>
+    <p class="fade-in">Stay updated with our latest news and articles.</p>
+    <div class="blog-grid">
+      <!-- مقال 1 -->
+      <article class="fade-in">
+        <img src="images/modern-dental-clinic.jpg" alt="Modern Dental Clinic" loading="lazy">
+        <div class="blog-content">
+          <h3>Innovations in Dental Technology</h3>
+          <p>A modern dental clinic interior with advanced equipment and a soothing ambiance.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </article>
+      <!-- مقال 2 -->
+      <article class="fade-in">
+        <img src="images/dental-technology.jpg" alt="Dental Technology" loading="lazy">
+        <div class="blog-content">
+          <h3>How to Achieve the Perfect Smile</h3>
+          <p>Close-up shot of state-of-the-art dental technology in use, showcasing precision and innovation.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </article>
+      <!-- مقال 3 -->
+      <article class="fade-in">
+        <img src="images/smile-transformation.jpg" alt="Smile Transformation" loading="lazy">
+        <div class="blog-content">
+          <h3>Smile Transformation Secrets</h3>
+          <p>Before and after images of a smile transformation highlighting professional dental work.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </article>
+      <!-- مقال 4 -->
+      <article class="fade-in">
+        <img src="images/dental-team.jpg" alt="Dental Team" loading="lazy">
+        <div class="blog-content">
+          <h3>Meet Our Dental Team</h3>
+          <p>A friendly and professional dental team posing in a well-lit clinic environment, emphasizing teamwork and care.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </article>
+      <!-- مقال 5 -->
+      <article class="fade-in">
+        <img src="images/dental-art.jpg" alt="Dental Art" loading="lazy">
+        <div class="blog-content">
+          <h3>The Art of Dental Care</h3>
+          <p>Artistic representation of dental care and smile aesthetics with creative lighting and composition.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2023 Great Smile Lab. All rights reserved.</p>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" title="Go to top" aria-label="Back to Top">↑</button>
+
+  <!-- MODAL POPUP (إن وجد) -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <span class="close" aria-label="Close Modal">&times;</span>
+      <h2>Contact Us</h2>
+      <p>Fill out the form below to get in touch:</p>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <input type="text" id="modal-name" name="name" required placeholder=" ">
+          <label for="modal-name">Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="modal-email" name="email" required placeholder=" ">
+          <label for="modal-email">Email</label>
+        </div>
+        <div class="form-group">
+          <textarea id="modal-message" name="message" rows="5" required placeholder=" "></textarea>
+          <label for="modal-message">Message</label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

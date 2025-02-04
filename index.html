@@ -1,206 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Great Smile Lab</title>
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Particle.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <!-- ScrollReveal CDN -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Great Smile Lab</title>
+  <!-- Meta SEO Tags -->
+  <meta name="description" content="Precision Dental Laboratory Services - Crafting Perfect Smiles">
+  <meta name="keywords" content="Dental, Lab, Implants, Smiles">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <!-- GSAP and ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <!-- Progress Bar -->
-    <div id="progress-bar"></div>
+  <!-- Progress Bar -->
+  <div id="progress-bar" aria-hidden="true"></div>
 
-    <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Great Smile Lab Logo">
-        </div>
-        <nav>
-            <!-- Hamburger Menu Icon -->
-            <div class="mobile-menu-icon" id="menu-icon">&#9776;</div>
-            <ul id="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li>
-                    <select id="language-switcher">
-                        <option value="en">English</option>
-                        <option value="ar">العربية</option>
-                        <option value="sv">Svenska</option>
-                        <option value="da">Dansk</option>
-                    </select>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section with Background Image -->
-    <section id="home" class="hero parallax">
-        <div id="particles-js" class="particles-container"></div> <!-- Particle.js Container -->
-        <div class="hero-content fade-in">
-            <h1 class="gradient-text">Crafting Perfect Smiles</h1>
-            <p>Precision Dental Laboratory Services</p>
-            <a href="#services" class="cta-button">Explore Services</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2 class="fade-in gradient-text">About Us</h2>
-        <p class="fade-in">
-            At Great Smile Lab, we are dedicated to providing top-notch dental laboratory services. Our team of experts uses the latest technology and materials to craft perfect smiles for our clients.
-        </p>
-        <p class="fade-in">
-            With years of experience in the industry, we pride ourselves on delivering precision, quality, and customer satisfaction in every project we undertake.
-        </p>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2 class="fade-in gradient-text">Our Services</h2>
-        <p class="price-note fade-in">Our services start at just $80. Explore the options below to find the perfect solution for your needs.</p>
-        <div class="services-grid">
-            <!-- Service 1: Implantat -->
-            <div class="service-card fade-in tooltip">
-                <img src="images/implantat.jpg" alt="Implantat" loading="lazy" class="hover-effect">
-                <span class="tooltiptext">High-quality dental implants</span>
-                <div class="service-content">
-                    <h3>Implantat</h3>
-                    <p>High-quality dental implants designed for durability and aesthetics.</p>
-                </div>
-            </div>
-
-            <!-- Service 2: MK -->
-            <div class="service-card fade-in tooltip">
-                <img src="images/mk.jpg" alt="MK" loading="lazy" class="hover-effect">
-                <span class="tooltiptext">Advanced dental solutions</span>
-                <div class="service-content">
-                    <h3>MK</h3>
-                    <p>Advanced dental solutions tailored to meet your specific needs.</p>
-                </div>
-            </div>
-
-            <!-- Service 3: Avtagbar -->
-            <div class="service-card fade-in tooltip">
-                <img src="images/partial_protes.jpg" alt="Avtagbar" loading="lazy" class="hover-effect">
-                <span class="tooltiptext">Custom removable dentures</span>
-                <div class="service-content">
-                    <h3>Avtagbar</h3>
-                    <p>Custom removable dentures crafted for comfort and functionality.</p>
-                </div>
-            </div>
-
-            <!-- Service 4: Zirkon -->
-            <div class="service-card fade-in tooltip">
-                <img src="images/zirkon.jpg" alt="Zirkon" loading="lazy" class="hover-effect">
-                <span class="tooltiptext">Durable zirconia crowns</span>
-                <div class="service-content">
-                    <h3>Zirkon</h3>
-                    <p>Durable zirconia crowns that blend seamlessly with natural teeth.</p>
-                </div>
-            </div>
-
-            <!-- Service 5: Bettskena_Blekningskena -->
-            <div class="service-card fade-in tooltip">
-                <img src="images/Bettskena-blekningskena.jpg" alt="Bettskena_Blekningskena" loading="lazy" class="hover-effect">
-                <span class="tooltiptext">Teeth whitening trays</span>
-                <div class="service-content">
-                    <h3>Bettskena_Blekningskena</h3>
-                    <p>Professional teeth whitening trays for a brighter smile.</p>
-                </div>
-            </div>
-
-            <!-- Service 6: Emax Venners -->
-            <div class="service-card fade-in tooltip">
-                <img src="images/emax-venner.jpg" alt="Emax Venners" loading="lazy" class="hover-effect">
-                <span class="tooltiptext">Premium ceramic veneers</span>
-                <div class="service-content">
-                    <h3>Emax Venners</h3>
-                    <p>Premium ceramic veneers for a flawless smile transformation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2 class="fade-in gradient-text">Contact Us</h2>
-        <p class="fade-in">Feel free to reach out to us for any inquiries or collaborations.</p>
-        <form action="#" method="POST" enctype="multipart/form-data">
-            <!-- Name Field -->
-            <div class="form-group">
-                <input type="text" id="name" name="name" required placeholder=" ">
-                <label for="name">Name</label>
-            </div>
-
-            <!-- Email Field -->
-            <div class="form-group">
-                <input type="email" id="email" name="email" required placeholder=" ">
-                <label for="email">Email</label>
-            </div>
-
-            <!-- Message Field -->
-            <div class="form-group">
-                <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                <label for="message">Message</label>
-            </div>
-
-            <!-- File Attachment -->
-            <label for="file">Attach File (Optional):</label>
-            <input type="file" id="file" name="file">
-
-            <!-- Submit Button -->
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/46737012177" target="_blank" class="whatsapp-button">
-        <img src="images/whatsapp-icon.png" alt="WhatsApp">
-        <span>Contact Us on WhatsApp</span>
-    </a>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Go to top">↑</button>
-
-    <!-- Modal Popup -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Contact Us</h2>
-            <p>Fill out the form below to get in touch:</p>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <input type="text" id="modal-name" name="name" required placeholder=" ">
-                    <label for="modal-name">Name</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="modal-email" name="email" required placeholder=" ">
-                    <label for="modal-email">Email</label>
-                </div>
-                <div class="form-group">
-                    <textarea id="modal-message" name="message" rows="5" required placeholder=" "></textarea>
-                    <label for="modal-message">Message</label>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Great Smile Lab Logo" loading="lazy">
     </div>
+    <nav>
+      <div class="mobile-menu-icon" id="menu-icon" aria-label="Menu" tabindex="0">&#9776;</div>
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <!-- تأكد من أن الرابط هنا يشير إلى قسم الخدمات -->
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>
+          <select id="language-switcher" aria-label="Language Switcher">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="sv">Svenska</option>
+            <option value="da">Dansk</option>
+          </select>
+        </li>
+        <li class="search-box">
+          <input type="text" placeholder="Search..." aria-label="Search">
+          <button aria-label="Submit Search">&#128269;</button>
+        </li>
+        <!-- زر الوضع الليلي -->
+        <li>
+          <button class="dark-mode-toggle" aria-label="Toggle Dark Mode"><span>&#9789;</span></button>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2023 Great Smile Lab. All rights reserved.</p>
-    </footer>
+  <!-- HERO SECTION -->
+  <section id="home" class="hero" role="banner">
+    <div class="hero-content fade-in">
+      <!-- العنوان بتدرج لوني على النص -->
+      <h1 class="gradient-text">Crafting Perfect Smiles</h1>
+      <p>Precision Dental Laboratory Services</p>
+      <!-- زر "Explore Services" يشير إلى قسم الخدمات -->
+      <a href="#services" class="cta-button">Explore Services</a>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about" aria-labelledby="about-heading">
+    <h2 id="about-heading" class="fade-in">About Us</h2>
+    <p class="fade-in">
+      At Great Smile Lab, we are dedicated to providing top-notch dental laboratory services.
+      Our expert team uses state-of-the-art technology to craft the perfect smile.
+    </p>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="services" aria-labelledby="services-heading">
+    <h2 id="services-heading" class="fade-in">Our Services</h2>
+    <p class="fade-in">Our services start at just $80. Explore the options below to find the perfect solution for your needs.</p>
+    <div class="services-grid">
+      <!-- Service Card 1 -->
+      <div class="service-card fade-in">
+        <img src="images/implantat.jpg" alt="Implantat" loading="lazy" class="hover-effect">
+        <h3>Implantat</h3>
+        <p>High-quality dental implants designed for durability and aesthetics.</p>
+      </div>
+      <!-- Service Card 2 -->
+      <div class="service-card fade-in">
+        <img src="images/mk.jpg" alt="MK" loading="lazy" class="hover-effect">
+        <h3>MK</h3>
+        <p>Advanced dental solutions tailored to meet your specific needs.</p>
+      </div>
+      <!-- Service Card 3 -->
+      <div class="service-card fade-in">
+        <img src="images/partial_protes.jpg" alt="Avtagbar" loading="lazy" class="hover-effect">
+        <h3>Avtagbar</h3>
+        <p>Custom removable dentures crafted for comfort and functionality.</p>
+      </div>
+      <!-- Service Card 4 -->
+      <div class="service-card fade-in">
+        <img src="images/zirkon.jpg" alt="Zirkon" loading="lazy" class="hover-effect">
+        <h3>Zirkon</h3>
+        <p>Durable zirconia crowns that blend seamlessly with natural teeth.</p>
+      </div>
+      <!-- Service Card 5 -->
+      <div class="service-card fade-in">
+        <img src="images/Bettskena-blekningskena.jpg" alt="Bettskena_Blekningskena" loading="lazy" class="hover-effect">
+        <h3>Bettskena_Blekningskena</h3>
+        <p>Professional teeth whitening trays for a brighter smile.</p>
+      </div>
+      <!-- Service Card 6 -->
+      <div class="service-card fade-in">
+        <img src="images/emax-venner.jpg" alt="Emax Venners" loading="lazy" class="hover-effect">
+        <h3>Emax Venners</h3>
+        <p>Premium ceramic veneers for a flawless smile transformation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
+    <h2 id="testimonials-heading" class="fade-in">Testimonials</h2>
+    <div class="testimonials-slider">
+      <!-- Testimonial 1 -->
+      <div class="testimonial fade-in">
+        <img src="images/testimonial-john.jpg" alt="Testimonial John" class="profile" loading="lazy">
+        <p>"Great Smile Lab transformed our smiles! Exceptional quality and service."</p>
+        <div class="author">- John Doe</div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="testimonial fade-in">
+        <img src="images/testimonial-jane.jpg" alt="Testimonial Jane" class="profile" loading="lazy">
+        <p>"Professional, reliable and innovative. Highly recommended!"</p>
+        <div class="author">- Jane Smith</div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="testimonial fade-in">
+        <img src="images/testimonial-mark.jpg" alt="Testimonial Mark" class="profile" loading="lazy">
+        <p>"Their attention to detail is remarkable. Our go-to dental lab."</p>
+        <div class="author">- Mark Wilson</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" class="fade-in">Contact Us</h2>
+    <p class="fade-in">Feel free to reach out to us for any inquiries or collaborations.</p>
+    <form action="#" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <input type="text" id="name" name="name" required placeholder=" ">
+        <label for="name">Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" required placeholder=" ">
+        <label for="email">Email</label>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+        <label for="message">Message</label>
+      </div>
+      <label for="file">Attach File (Optional):</label>
+      <input type="file" id="file" name="file">
+      <button type="submit">Send Message</button>
+      <!-- زر واتساب يظهر تحت زر الإرسال -->
+      <a href="https://wa.me/46737012177" target="_blank" class="whatsapp-button" aria-label="Contact Us on WhatsApp">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp Icon" loading="lazy">
+        <span>Contact Us on WhatsApp</span>
+      </a>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2023 Great Smile Lab. All rights reserved.</p>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" title="Go to top" aria-label="Back to Top">↑</button>
+
+  <!-- MODAL POPUP -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <span class="close" aria-label="Close Modal">&times;</span>
+      <h2>Contact Us</h2>
+      <p>Fill out the form below to get in touch:</p>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <input type="text" id="modal-name" name="name" required placeholder=" ">
+          <label for="modal-name">Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="modal-email" name="email" required placeholder=" ">
+          <label for="modal-email">Email</label>
+        </div>
+        <div class="form-group">
+          <textarea id="modal-message" name="message" rows="5" required placeholder=" "></textarea>
+          <label for="modal-message">Message</label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+  <!-- تسجيل Service Worker للتطبيق التقدمي -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+      .then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(error => {
+        console.log('Service Worker registration failed:', error);
+      });
+    }
+  </script>
 </body>
 </html>
